@@ -1,0 +1,7 @@
+.git
+.gitignore
+static/
+venv/
+.env.example
+poetry.lock
+pyproject.toml
