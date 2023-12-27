@@ -11,6 +11,7 @@ from views import base
 logging.basicConfig(
     format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
     level=logging.WARNING,
+    filename="asynclient/settings/logs.log"
 )
 
 
