@@ -1,12 +1,13 @@
-from dotenv import dotenv_values
+import os
+from dotenv import load_dotenv
 
 
 class BaseSettings:
     def __init__(self, *, env: str | None = None) -> None:
-        self._converts_of_env(env)
+        load_dotenv(env)
 
-    def _converts_of_env(self, env):
-        for k, v in dotenv_values(env).items():
+    def _converts_of_env(self):
+        for k, v in os.environ.items():
             if k in self.__annotations__:
                 setattr(self, k, self.__annotations__[k](v))
 
