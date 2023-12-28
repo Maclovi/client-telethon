@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 class BaseSettings:
     def __init__(self, *, env: str | None = None) -> None:
         load_dotenv(env)
+        self._converts_of_env()
 
     def _converts_of_env(self):
         for k, v in os.environ.items():
